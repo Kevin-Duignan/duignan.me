@@ -4,7 +4,11 @@ body {
 	font-family: "Montserrat", sans-serif;
 	margin: 0;
 	height: 100vh;
-	background: linear-gradient(#2c2b30, #4f4f51);
+	background-image: radial-gradient(
+		farthest-corner at 1px 1px,
+		#4f4f51 0%,
+		#201f23 100%
+	);
 }
 
 #header {
