@@ -34,3 +34,7 @@ body {
 .navbar a:last-child {
 	margin-right: 3rem;
 }
+
+.navbar a:hover {
+	cursor: pointer;
+}
