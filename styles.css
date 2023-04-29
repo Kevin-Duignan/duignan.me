@@ -1,67 +1,122 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu:wght@300&display=swap");
-
 body {
 	font-family: Arial, Helvetica, sans-serif;
-	margin: 0;
-	height: 100vh;
+	margin: 0px;
+	padding: 0px;
+}
+
+#header {
+	position: sticky;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background-color: #302c4a;
+}
+
+.navbar {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+#main {
 	background-image: radial-gradient(
 		farthest-corner at 1px 1px,
 		#b1b1d8 0%,
 		#35305a 100%
 	);
-}
-
-#header {
-	position: fixed;
-	width: 100%;
-	height: 100px;
-	background-color: #302c4a;
-	border-end-end-radius: 2%;
-	border-end-start-radius: 2%;
-}
-
-.navbar {
-	display: flex;
-	height: 100%;
-	justify-content: flex-end;
-	align-items: center;
+	padding: 0px;
+	margin: 0px;
 }
 
 .navbar a {
-	font-size: min(20vw, 2rem);
+	font-size: clamp(1em, 3vw, 2em);
 	white-space: nowrap;
 	color: #d6d6d6;
-	margin: 2rem;
+	padding: 1.5rem;
 }
 
 .navbar #home {
 	margin-right: auto;
-	margin-left: 3rem;
+	margin-left: 2rem;
 }
 
 .navbar a:last-child {
-	margin-right: 3rem;
+	margin-right: 2rem;
 }
 
 .navbar a:hover {
 	cursor: pointer;
+	background-color: #44577d;
+	color: #ffffff;
 }
 
 #about {
-	padding: 250px 100px;
-	overflow: scroll;
+	display: flex;
+	padding-left: min(10vw, 200px);
+	justify-content: center;
+	flex-direction: column;
+	height: 100vh;
+	overflow: hidden;
 }
 .greeting {
 	text-align: left;
-	font-size: 5em;
+	font-size: clamp(6rem, 12vw, 7rem);
 	font-weight: bolder;
-	margin-bottom: 0;
+	margin: 0;
 	color: #302c4a;
 }
 
 .italics {
-	font-size: 2em;
+	font-size: clamp(2rem, 5vw, 4rem);
 	text-align: left;
 	font-style: italic;
 	color: #d6d6d6;
+	margin-bottom: 200px;
+}
+
+#projects {
+	background-color: #44577d;
+	padding: 3rem;
+	padding-bottom: 10rem;
+}
+
+h2 {
+	color: #d6d6d6;
+	text-align: center;
+	text-decoration: underline;
+	font-family: monospace;
+	font-size: 3rem;
+	margin-bottom: 4rem;
+}
+
+.grid-items {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	grid-gap: 4rem;
+	width: 100%;
+	margin: 0 auto;
+	max-width: 1280px;
+}
+
+.item {
+	width: 400px;
+	height: 500px;
+	background-color: darkred;
+	overflow: hidden;
+}
+
+.img {
+	width: 100%;
+	height: 85%;
+}
+
+.project-link {
+	margin: 0;
+	background-color: #302c4a;
+	color: #d6d6d6;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	padding: 7% 0;
 }
