@@ -1,6 +1,7 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
-	margin: 0;
+	margin: 0px;
+	padding: 0px;
 }
 
 #header {
@@ -24,32 +25,35 @@ body {
 		#b1b1d8 0%,
 		#35305a 100%
 	);
-	padding: 0;
+	padding: 0px;
+	margin: 0px;
 }
 
 .navbar a {
-	font-size: min(20vw, 2rem);
+	font-size: clamp(1em, 3vw, 2em);
 	white-space: nowrap;
 	color: #d6d6d6;
-	margin: 2rem;
+	padding: 1.5rem;
 }
 
 .navbar #home {
 	margin-right: auto;
-	margin-left: 3rem;
+	margin-left: 2rem;
 }
 
 .navbar a:last-child {
-	margin-right: 3rem;
+	margin-right: 2rem;
 }
 
 .navbar a:hover {
 	cursor: pointer;
+	background-color: #44577d;
+	color: #ffffff;
 }
 
 #about {
 	display: flex;
-	padding-left: 200px;
+	padding-left: min(10vw, 200px);
 	justify-content: center;
 	flex-direction: column;
 	height: 100vh;
@@ -57,22 +61,24 @@ body {
 }
 .greeting {
 	text-align: left;
-	font-size: 5em;
+	font-size: clamp(6rem, 12vw, 7rem);
 	font-weight: bolder;
-	margin-bottom: 0;
+	margin: 0;
 	color: #302c4a;
 }
 
 .italics {
-	font-size: 2em;
+	font-size: clamp(2rem, 5vw, 4rem);
 	text-align: left;
 	font-style: italic;
 	color: #d6d6d6;
+	margin-bottom: 200px;
 }
 
 #projects {
 	background-color: #44577d;
-	padding: 1.5rem;
+	padding: 3rem;
+	padding-bottom: 10rem;
 }
 
 h2 {
@@ -80,16 +86,37 @@ h2 {
 	text-align: center;
 	text-decoration: underline;
 	font-family: monospace;
-	font-size: 2rem;
+	font-size: 3rem;
+	margin-bottom: 4rem;
 }
 
 .grid-items {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	grid-gap: 4rem;
+	width: 100%;
+	margin: 0 auto;
+	max-width: 1280px;
 }
 
 .item {
-	width: 300px;
-	height: 200px;
+	width: 400px;
+	height: 500px;
 	background-color: darkred;
+	overflow: hidden;
+}
+
+.img {
+	width: 100%;
+	height: 85%;
+}
+
+.project-link {
+	margin: 0;
+	background-color: #302c4a;
+	color: #d6d6d6;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	padding: 7% 0;
 }
