@@ -1,3 +1,15 @@
+:root {
+	--main-white: #fefae0;
+	--main-red: #bc6c25;
+	--main-peach: #dda15e;
+	--main-green: #606c38;
+	--main-blue: #302c4a;
+}
+
+* {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0px;
@@ -9,7 +21,8 @@ body {
 	width: 100%;
 	height: 100%;
 	top: 0;
-	background-color: #302c4a;
+	z-index: 999;
+	background-color: var(--main-peach);
 }
 
 .navbar {
@@ -19,26 +32,34 @@ body {
 	align-items: center;
 }
 
-#main {
-	background-image: radial-gradient(
-		farthest-corner at 1px 1px,
-		#b1b1d8 0%,
-		#35305a 100%
-	);
-	padding: 0px;
-	margin: 0px;
-}
-
 .navbar a {
 	font-size: clamp(1em, 3vw, 2em);
 	white-space: nowrap;
-	color: #d6d6d6;
-	padding: 1.5rem;
+	color: var(--main-white);
+	margin: 1rem;
+	padding: 0.5rem;
+	border-radius: 5%;
+	text-decoration: none;
+}
+
+#main {
+	/* background-image: radial-gradient(
+		farthest-corner at 1px 1px,
+		#b1b1d8 0%,
+		#35305a 100%
+	); */
+	background-color: var(--main-peach);
+	padding: 0px;
+	margin: 0px;
 }
 
 .navbar #home {
 	margin-right: auto;
 	margin-left: 2rem;
+	font-family: monospace;
+	font-weight: bold;
+	/* font-style: italic; */
+	color: var(--main-green);
 }
 
 .navbar a:last-child {
@@ -47,8 +68,9 @@ body {
 
 .navbar a:hover {
 	cursor: pointer;
-	background-color: #44577d;
+	background-color: var(--main-red);
 	color: #ffffff;
+	transition: 0.3s ease;
 }
 
 #about {
@@ -59,33 +81,56 @@ body {
 	height: 100vh;
 	overflow: hidden;
 }
+
 .greeting {
+	overflow: hidden;
 	text-align: left;
 	font-size: clamp(6rem, 12vw, 7rem);
 	font-weight: bolder;
 	margin: 0;
-	color: #302c4a;
+	color: var(--main-blue);
 }
 
 .italics {
-	font-size: clamp(2rem, 5vw, 4rem);
+	overflow: hidden;
+	font-size: clamp(2rem, 5vw, 3rem);
 	text-align: left;
 	font-style: italic;
-	color: #d6d6d6;
+	color: var(--main-red);
 	margin-bottom: 200px;
 }
 
+.greeting .reveal-animation {
+	display: block;
+	animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+}
+
+.italics .reveal-animation {
+	display: block;
+	animation: reveal 3.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+}
+
+@keyframes reveal {
+	0% {
+		transform: translate(0, 100%);
+		margin: 0;
+	}
+	100% {
+		transform: translate(0, 0);
+	}
+}
+
 #projects {
-	background-color: #44577d;
+	background-color: var(--main-green);
 	padding: 3rem;
 	padding-bottom: 10rem;
 }
 
 h2 {
-	color: #d6d6d6;
+	color: var(--main-white);
+	font-family: monospace;
 	text-align: center;
 	text-decoration: underline;
-	font-family: monospace;
 	font-size: 3rem;
 	margin-bottom: 4rem;
 }
@@ -102,21 +147,77 @@ h2 {
 .item {
 	width: 400px;
 	height: 500px;
-	background-color: darkred;
-	overflow: hidden;
+	text-decoration: none;
 }
 
 .img {
+	margin: 0px;
 	width: 100%;
+	object-fit: fill;
 	height: 85%;
+	padding: 0px;
+	display: block;
 }
 
+.img:hover {
+	transition: 0.3s ease;
+	opacity: 0.7;
+	cursor: pointer;
+}
 .project-link {
-	margin: 0;
-	background-color: #302c4a;
-	color: #d6d6d6;
-	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0px;
+	background-color: var(--main-blue);
+	width: 100%;
+	height: 15%;
+}
+
+.project-link > p {
+	color: var(--main-white);
+	text-decoration: none;
+	font-size: 1.5em;
+	font-family: monospace;
 	font-weight: bold;
+}
+
+#contact {
+	display: flex;
+	background-color: var(--main-red);
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+}
+
+#contact h1 {
 	text-align: center;
-	padding: 7% 0;
+	font-family: Tahoma;
+	color: var(--main-white);
+	font-size: 6rem;
+}
+
+.flex-items {
+	width: min(60vw, 50rem);
+	display: flex;
+	justify-content: space-around;
+}
+.flex-items > a {
+	font-size: 2rem;
+	color: var(--main-blue);
+	text-decoration: none;
+	font-weight: bolder;
+}
+
+.flex-items > a:hover {
+	cursor: pointer;
+	transition: 0.3s ease;
+	transform: translateY(10px);
+}
+
+.fab {
+	font-family: "Font Awesome 5 Brands";
+	display: inline;
+	white-space: nowrap;
 }
