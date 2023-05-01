@@ -1,3 +1,7 @@
+* {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0px;
@@ -9,6 +13,7 @@ body {
 	width: 100%;
 	height: 100%;
 	top: 0;
+	z-index: 999;
 	background-color: #302c4a;
 }
 
@@ -19,6 +24,14 @@ body {
 	align-items: center;
 }
 
+.navbar a {
+	font-size: clamp(1em, 3vw, 2em);
+	white-space: nowrap;
+	color: #d6d6d6;
+	padding: 1.5rem;
+	text-decoration: none;
+}
+
 #main {
 	background-image: radial-gradient(
 		farthest-corner at 1px 1px,
@@ -27,13 +40,6 @@ body {
 	);
 	padding: 0px;
 	margin: 0px;
-}
-
-.navbar a {
-	font-size: clamp(1em, 3vw, 2em);
-	white-space: nowrap;
-	color: #d6d6d6;
-	padding: 1.5rem;
 }
 
 .navbar #home {
@@ -49,6 +55,7 @@ body {
 	cursor: pointer;
 	background-color: #44577d;
 	color: #ffffff;
+	transition: 0.3s ease;
 }
 
 #about {
@@ -59,7 +66,9 @@ body {
 	height: 100vh;
 	overflow: hidden;
 }
+
 .greeting {
+	overflow: hidden;
 	text-align: left;
 	font-size: clamp(6rem, 12vw, 7rem);
 	font-weight: bolder;
@@ -68,11 +77,32 @@ body {
 }
 
 .italics {
-	font-size: clamp(2rem, 5vw, 4rem);
+	overflow: hidden;
+	font-size: clamp(2rem, 5vw, 3rem);
 	text-align: left;
 	font-style: italic;
 	color: #d6d6d6;
 	margin-bottom: 200px;
+}
+
+.greeting .reveal-animation {
+	display: block;
+	animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+}
+
+.italics .reveal-animation {
+	display: block;
+	animation: reveal 3.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+}
+
+@keyframes reveal {
+	0% {
+		transform: translate(0, 100%);
+		margin: 0;
+	}
+	100% {
+		transform: translate(0, 0);
+	}
 }
 
 #projects {
@@ -82,10 +112,10 @@ body {
 }
 
 h2 {
-	color: #d6d6d6;
+	color: #efefef;
+	font-family: monospace;
 	text-align: center;
 	text-decoration: underline;
-	font-family: monospace;
 	font-size: 3rem;
 	margin-bottom: 4rem;
 }
@@ -102,21 +132,77 @@ h2 {
 .item {
 	width: 400px;
 	height: 500px;
-	background-color: darkred;
-	overflow: hidden;
+	text-decoration: none;
 }
 
 .img {
+	margin: 0px;
 	width: 100%;
+	object-fit: fill;
 	height: 85%;
+	padding: 0px;
+	display: block;
 }
 
+.img:hover {
+	transition: 0.3s ease;
+	opacity: 0.7;
+	cursor: pointer;
+}
 .project-link {
-	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0px;
 	background-color: #302c4a;
+	width: 100%;
+	height: 15%;
+}
+
+.project-link > p {
 	color: #d6d6d6;
-	font-size: 20px;
+	text-decoration: none;
+	font-size: 1.5em;
+	font-family: monospace;
 	font-weight: bold;
+}
+
+#contact {
+	display: flex;
+	/* background-color: #3c325d; */
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+}
+
+#contact h1 {
 	text-align: center;
-	padding: 7% 0;
+	font-family: Tahoma;
+	color: #efefef;
+	font-size: 6rem;
+}
+
+.flex-items {
+	width: min(60vw, 50rem);
+	display: flex;
+	justify-content: space-around;
+}
+.flex-items > a {
+	font-size: 2rem;
+	color: #b5b5b5;
+	text-decoration: none;
+	font-weight: bolder;
+}
+
+.flex-items > a:hover {
+	cursor: pointer;
+	transition: 0.3s ease;
+	transform: translateY(10px);
+}
+
+.fab {
+	font-family: "Font Awesome 5 Brands";
+	display: inline;
+	white-space: nowrap;
 }

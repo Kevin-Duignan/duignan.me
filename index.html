@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
     <link href="styles.css" rel="stylesheet">
     <title>Kevin Duignan</title>
 </head>
@@ -12,48 +14,50 @@
 <body>
     <header id="header">
         <nav class="navbar">
-            <a id="home">Kevin Duignan</a>
-            <a>About</a>
-            <a>Projects</a>
-            <a>Contact Me</a>
+            <a id="home" href="#about">Kevin Duignan</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact Me</a>
         </nav>
     </header>
-
     <main id="main">
         <section id="about">
-            <h1 class="greeting">Hey there! 👋</h1>
-            <p class="italics">I'm Kevin, a software developer.</p>
+            <h1 class="greeting"><span class="reveal-animation">Hey there! 👋</span></h1>
+            <p class="italics"><span class="reveal-animation">I'm Kevin, a software developer and CS student.<span></p>
         </section>
         <section id="projects">
             <h2>Here are Some of My Projects</h2>
             <div class="grid-items">
-                <a class="item">
-                    <div class="img"></div>
-                    <p class="project-link">Tribute Page</p>
+                <a class="item" href="https://github.com/Kevin-Duignan/Notes-App">
+                    <img class="img" src="static/notes.jpg" alt="Notes app project image.">
+                    <div class="project-link">
+                        <p>Notes App</p>
+                    </div>
                 </a>
-                <a class="item">
-                    <div class="img"></div>
-                    <p class="project-link">Tribute Page</p>
+                <a class="item" href="https://github.com/Kevin-Duignan/hornadium-landing-page
+                ">
+                    <img class="img" src="static/hornadium.jpg" alt="vinyl store landing page image.">
+                    <div class="project-link">
+                        <p>Vinyl Music Store</p>
+                    </div>
                 </a>
-                <a class="item">
-                    <div class="img"></div>
-                    <p class="project-link">Tribute Page</p>
+                <a class="item" href="https://github.com/Kevin-Duignan/sudoku
+                ">
+                    <img class="img" src="static/sudoku.jpg" alt="sudoku image.">
+                    <div class="project-link">
+                        <p>Sudoku Game</p>
+                    </div>
                 </a>
-                <a class="item">
-                    <div class="img"></div>
-                    <p class="project-link">Tribute Page</p>
-                </a>
-                <a class="item">
-                    <div class="img"></div>
-                    <p class="project-link">Tribute Page</p>
-                </a>
-                <a class="item">
-                    <div class="img"></div>
-                    <p class="project-link">Tribute Page</p>
-                </a>
-            </div>
         </section>
         <section id="contact">
+            <h1>Let's Get In Touch...</h1>
+            <div class="flex-items">
+                <a href="https://www.linkedin.com/in/kevin-duignan-32a0a4266/" target="_blank"><i
+                        class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/Kevin-Duignan" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="mailto:kevin@duignan.me"><i class="fas fa-at"></i> Send a mail</a>
+            </div>
+
         </section>
     </main>
 </body>
