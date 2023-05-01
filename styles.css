@@ -59,7 +59,10 @@ body {
 	font-family: monospace;
 	font-weight: bold;
 	/* font-style: italic; */
-	color: var(--main-green);
+	color: var(--main-red);
+}
+.navbar #home:hover {
+	color: var(--main-peach);
 }
 
 .navbar a:last-child {
@@ -213,7 +216,7 @@ h2 {
 .flex-items > a:hover {
 	cursor: pointer;
 	transition: 0.3s ease;
-	transform: translateY(10px);
+	transform: translateY(-10px);
 }
 
 .fab {
