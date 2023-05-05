@@ -35,7 +35,7 @@ body {
 .navbar a {
 	font-size: clamp(1em, 3vw, 2em);
 	white-space: nowrap;
-	color: var(--main-white);
+	color: var(--main-red);
 	margin: 1rem;
 	padding: 0.5rem;
 	border-radius: 5%;
@@ -225,10 +225,10 @@ h2 {
 	white-space: nowrap;
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
 	.grid-items {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
-}
+} */
